@@ -1,26 +1,16 @@
 ---
-# try also 'default' to start simple
-theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://source.unsplash.com/collection/94734566/1920x1080
-# apply any windi css classes to the current slide
+theme: seriph 
+layout: cover
+background: /nasa-hurricane.avif
+defaults:
+  transition: fade
+  layout: center
 class: 'text-center'
-# https://sli.dev/custom/highlighters.html
 highlighter: shiki
-# show line numbers in code blocks
-lineNumbers: false
-# some information about the slides, markdown enabled
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
-# persist drawings in exports and build
-drawings:
-  persist: false
-# use UnoCSS (experimental)
 css: unocss
+fonts:
+  sans: "Atkinson Hyperlegible"
+  weights: "400,700"
 ---
 
 # How Markdown Can Stop Hurricanes
@@ -28,57 +18,307 @@ css: unocss
 Ben Holmes _@bholmesdev_
 
 ---
-
-## What we're talking about
-
-<TOC />
-
----
-layout: intro
+layout: cover
+background: /kristaps-ungurs--lNJUtc6CPw-unsplash.jpg
 ---
 
-## Avoid greenwashing
+## **Problem:** the earth's getting toasty 😓
 
-> misleading or deceptive publicity disseminated by an organization so as to present an environmentally responsible public image.
+<p class="text-2xl" v-click>
+
+And the web contributes <span class="font-bold text-orange-500">~2%</span> of emissions
+
+</p>
+
+<Footnote>
+
+BBC science focus: https://www.sciencefocus.com/science/what-is-the-carbon-footprint-of-the-internet
+
+</Footnote>
+
+
+---
+layout: cover
+background: /kristaps-ungurs--lNJUtc6CPw-unsplash.jpg
+---
+
+## We're all content authors here!
+
+<v-click>
+
+What do we contribute, and how can we improve?
+
+</v-click>
+
+---
+layout: cover
+background: /kristaps-ungurs--lNJUtc6CPw-unsplash.jpg
+---
+
+## Goals
+
+<v-clicks>
+
+✅ explore energy-efficient **hosting, developing, and debugging**
+
+✅ find wins that won't sacrifice usability or developer experience
+
+</v-clicks>
 
 ---
 
-## Avoid greenwashing
+<div class="max-w-prose m-auto">
 
-- Don't pretend scale of environmental impact
-- Don't assume all efforts are on the consumer
+## Let's not pretend it's _our_ problem
+
+> **Greenwashing:** misleading or deceptive publicity disseminated by an organization so as to present an environmentally responsible public image.
+
+<v-click>
+
+**Companies** have a larger impact than the **consumer.**
+
+</v-click>
+
+</div>
+
+---
+layout: image-right
+image: /cloud-hosts.png
+---
+
+## Hosting
+
+
+Most energy spent **computing and sending.**
+
+<v-clicks>
+
+- How are the host's servers powered? 
+- What's the distance content ➡️ user?
+- Static? Cached? On-demand?
+
+</v-clicks>
+
+
+---
+layout: image-right
+image: /cloud-hosts.png
+---
+
+## Hosting
+
+
+Most energy spent **computing and sending.**
+
+- How are the host's servers powered? <span class="text-blue-400 font-bold">them</span> 
+- What's the distance content ➡️ user? <span class="text-yellow-400 font-bold">us</span>
+- Static? Cached? On-demand? <span class="text-green-400 font-bold">us _and_ them</span>
 
 ---
 
-## Sources of carbon emissions (VERY non exhaustive)
+## **Them:** Know what servers they use
 
-- Development cycle: CI/CD automation
-- Database and asset storage
-- Compute time per request
-- Sending resources over-the-wire
-- Client-side compute
+<v-clicks>
+
+Visit the <span class="text-green-400 font-bold">Green Web Foundation directory</span>
+
+Case: **Cloudflare** 🌥️
+
+- Worker cron jobs can be switched to sustainable hosts
+- Pages certified 100% renewable energy
+
+</v-clicks>
+
+<Footnote>
+
+Green Web Foundation directory https://www.thegreenwebfoundation.org/tools/directory/
+
+Cloudflare green compute https://blog.cloudflare.com/announcing-green-compute/
+
+Cloudflare pages https://blog.cloudflare.com/green-hosting-with-cloudflare-pages/
+
+</Footnote>
+
+---
+
+## **Us:** Know where content comes from
+
+---
 
 
-- How we build our websites
-- How we deploy our websites
+<FlipOnClick>
 
+![](/lifecycle-hype.png)
 
+</FlipOnClick>
+
+---
+
+![](/lifecycle-ideal.png)
+
+<Popover>
+
+Nothing beats static Markdown 🙃
+
+</Popover>
+
+---
+
+## Make development <span class="font-bold text-green-400">us _and_ them</span>
+
+<v-clicks>
+
+- <span class="font-bold text-yellow-400">Us:</span> Our product
+- <span class="font-bold text-blue-400">Them:</span> The framework
+
+</v-clicks>
+
+---
+layout: iframe-right
+url: https://nextjs.org/docs/app/building-your-application/rendering/edge-and-nodejs-runtimes#examples
+---
+
+## Next and SvelteKit runtimes
+
+- **✨ Magic:** Default to static, dynamic when you use `cookies`, `Response`, or query params
+- **🔨 Manual:** Per-route runtime options
+
+---
+
+## For server / client: let's talk **opt-in**
+
+---
+src: ./chapters/complexity-line.md
+---
+
+## 
+
+---
+
+## We've deployed... now we maintain
+
+**Debugging:** What do you have to **mock, compile, and run-rerun-rerun** to find the problem?
+
+---
+layout: image-right
+image: /coupling-the-good.png
 ---
 
 ## Debugging
 
-As JS gets better, testing gets... <v-click class=""> worse? 😅 </v-click>
+<span class="text-green-600">The good:</span> Web dev is spoiled by instant feedback loops
 
-- Tight coupling = more to simulate
+<v-clicks>
+
+- **Counting milliseconds** per dev server update
+- **Hot module reloading** to preserve client state
+- **JS across the stack:** one language, fewer probs
+
+</v-clicks>
+
+---
+layout: image-right
+image: /trello-clone-meme.png
+---
+
+## Debugging
+
+<span class="text-red-600">The bad:</span> More tooling = more points of failure
+
+<v-clicks>
+
+- Blurred server / client boundaries = wacky bundling
+- Endpoints are tightly coupled with RPC
+- TypeScript requires a build step (sorry mocha and chai)
+- **Left to console logs** most of the time
+
+</v-clicks>
+
+---
+layout: image
+image: /fix-lint.png
+---
+
+<Popover>
+
+**CI and prod-only** bugs are still too common 😓
+
+- Fast dev servers like Vite = _not_ prod builds
+- Edge runtimes = special _ahem_ edge cases
+
+</Popover>
+
+---
+layout: image-right
+image: /kristaps-ungurs--lNJUtc6CPw-unsplash.jpg
+---
+
+## Debugging and CI/CD
+
+Every CI/CD trigger costs compute.
+
+<v-clicks>
+
+- ⬆️ with environments (Linux, Mac, Windows)
+- ⬆️ with build processes (TypeScript, Webpack, Vite)
+- ⬆️ with reruns to `console.log` in prod
+
+</v-clicks>
 
 ---
 
-## Green hosting
+## New debuggers?
 
-- Not all compute hours are created equal
-  - Emissions are often an industry problem far more than an individual problem
-  - If you work countless hours to push compute times to zero, it's all pointless if the host is burning coal on each request
+<Gif src="/replayio.mp4" controls class="h-128" />
 
-- [Cloudflare worker cron jobs can be switched to sustainable hosts](https://blog.cloudflare.com/announcing-green-compute/)
-- [Cloudflare pages certified to run 100% renewable energy as Green Web Foundation partner](https://blog.cloudflare.com/green-hosting-with-cloudflare-pages/)
-- [Green Web Foundation directory of hosts](https://www.thegreenwebfoundation.org/tools/directory/)
+<Popover>
+
+## Replay.io 
+
+Small storage, zero rebuilds, only load replay on-demand
+
+</Popover>
+
+---
+layout: image-right
+image: /svelte-jsdoc.png
+---
+
+## Less bundling?
+
+Case: Svelte ditched `.ts` for core packages
+
+<v-clicks>
+
+- 🧘‍♂️ Kept type-safety with JSDoc and user-facing `.d.ts`
+- 🔪 Cut **release and CI build costs** to basically zero
+- TypeScript's `tsc` step = up to 4x higher energy cost
+
+</v-clicks>
+
+<Footnote class="max-w-[50vw]">
+
+Energy efficiency across programming languages https://greenlab.di.uminho.pt/wp-content/uploads/2017/09/paperSLE.pdf
+
+</Footnote>
+
+---
+
+## Better dev /prod alignment?
+
+<v-clicks>
+
+- **Turbopack** wants prod builds in dev without the wait
+- **Cloudflare's wrangler** replicates worker environments locally
+- **AWS Cloud9** puts the editor where code is running
+
+</v-clicks>
+
+---
+layout: cover
+background: /nasa-hurricane.avif
+---
+
+## So... can Markdown stop hurricanes?
+
+
