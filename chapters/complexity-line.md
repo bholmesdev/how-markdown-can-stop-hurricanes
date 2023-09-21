@@ -88,23 +88,3 @@
     margin: 0;
   }
 </style>
-
-
----
-
-## Opt-in to compute 💚
-
-<v-clicks>
-
-- Server, then client
-- Prerendered, then on-demand (remember **Jamstack?**)
-- Static, then server(less)(edge)
-- Beat the **1.17g CO2 average** for average web page views!
-
-</v-clicks>
-
-<Footnote>
-
-Website carbon calculator https://www.websitecarbon.com/
-
-</Footnote>

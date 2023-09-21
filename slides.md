@@ -37,7 +37,6 @@ BBC science focus: https://www.sciencefocus.com/science/what-is-the-carbon-footp
 
 </Footnote>
 
-
 ---
 layout: cover
 background: /kristaps-ungurs--lNJUtc6CPw-unsplash.jpg
@@ -206,6 +205,37 @@ export const runtime = 'edge' // 'nodejs' (default) | 'edge'
 src: ./chapters/complexity-line.md
 ---
 
+---
+
+## Opt-in to compute 💚
+
+<v-clicks>
+
+- Server, then client
+- Prerendered, then on-demand (remember **Jamstack?**)
+- Static, then server(less)(edge)
+
+</v-clicks>
+
+---
+layout: iframe-right
+url: https://starlight.astro.build/environmental-impact/#comparisons
+---
+
+## Where Markdown stops hurricanes
+
+_Enter VC funding mode_ 😉
+
+If we pulled our <span class="text-orange-400 font-bold">1.17g</span> page-view emissions down to the cost of HTML **(< 0.01g)**, we could make a <span class="text-green-400 font-bold">1.98%</span> dent
+
+<Footnote>
+
+Website carbon calculator https://www.websitecarbon.com/
+
+</Footnote>
+
+---
+
 ## We've deployed... now we maintain
 
 **Debugging:** What do you have to **mock, compile, and run-rerun-rerun** to find the problem?
@@ -331,6 +361,12 @@ background: /nasa-hurricane.avif
 ---
 
 ## So... can Markdown stop hurricanes?
+
+<v-click>
+
+If we compute less, opt-in more, and debug beyond the `console.log`... I think it can 🙃
+
+</v-click>
 
 ---
 
