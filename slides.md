@@ -156,12 +156,6 @@ Cloudflare pages https://blog.cloudflare.com/green-hosting-with-cloudflare-pages
 
 ![](/lifecycle-ideal.png)
 
-<Popover>
-
-Nothing beats static Markdown 🙃
-
-</Popover>
-
 ---
 
 ## Make development <span class="font-bold text-green-400">us _and_ them</span>
