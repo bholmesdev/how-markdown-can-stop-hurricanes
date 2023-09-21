@@ -1,6 +1,7 @@
 ---
 theme: seriph 
 layout: cover
+transition: slide-fade
 background: /nasa-hurricane.avif
 defaults:
   transition: fade
@@ -174,14 +175,28 @@ Nothing beats static Markdown 🙃
 </v-clicks>
 
 ---
-layout: iframe-right
-url: https://nextjs.org/docs/app/building-your-application/rendering/edge-and-nodejs-runtimes#examples
----
 
 ## Next and SvelteKit runtimes
 
+
+<div grid="~ cols-2 gap-4">
+<div>
+
 - **✨ Magic:** Default to static, dynamic when you use `cookies`, `Response`, or query params
 - **🔨 Manual:** Per-route runtime options
+
+</div>
+<div>
+
+```ts
+// cached, with revalidation options
+fetch('https://...', { next: { revalidate: 3600 } });
+
+export const runtime = 'edge' // 'nodejs' (default) | 'edge'
+```
+
+</div>
+</div>
 
 ---
 
@@ -189,10 +204,6 @@ url: https://nextjs.org/docs/app/building-your-application/rendering/edge-and-no
 
 ---
 src: ./chapters/complexity-line.md
----
-
-## 
-
 ---
 
 ## We've deployed... now we maintain
@@ -321,4 +332,10 @@ background: /nasa-hurricane.avif
 
 ## So... can Markdown stop hurricanes?
 
+---
 
+## Thank you!
+
+- 🚀 **Astro discord** - [astro.build/chat](https://astro.build/chat)
+- 🔎 **@bholmesdev** everywhere - [wtw.dev](https://wtw.dev)
+- 🍔 **Slides** - [**github.com/bholmesdev**/how-markdown-can-stop-hurricanes](https://github.com/bholmesdev/how-markdown-can-stop-hurricanes)
